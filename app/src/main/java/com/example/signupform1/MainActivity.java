@@ -33,51 +33,35 @@ public class MainActivity extends AppCompatActivity {
 
         signUp.setOnClickListener(new OnClickListener(){
            @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                String name = String.valueOf(et1.getText()),
                        email = String.valueOf(et2.getText()),
                        password = String.valueOf(et3.getText()),
                        reenter = String.valueOf(et4.getText());
 
 
-               if(!name.equals("") &&
-               email.equals("")&&
-               password.equals("")&&
-               reenter.equals("")) {
-
-
-                   if(password.equals(reenter)){
-
-                       Toast.makeText(getApplicationContext(),
-                               "Welcome, " + name + ",to the SignUpFormApp",
-                               Toast.LENGTH_SHORT).show();
-
-                   }
-                   else{
-
-                       Toast.makeText(getApplicationContext(),
-                               "passwords don't match",
-                               Toast.LENGTH_SHORT).show();
-
-                   }
-
-               }
-
-               else{
+               if (name.equals("") || email.equals("") || password.equals("") || reenter.equals("") ) {
 
                    Toast.makeText(getApplicationContext(),
-                           "Must enter all fields",Toast.LENGTH_SHORT).show();
-
-
+                           "Must enter all fields", Toast.LENGTH_SHORT).show();
                }
+               else{
 
+                   if (password.equals(reenter)) {
 
+                           Toast.makeText(getApplicationContext(),
+                                   "Welcome, " + name + ",to the SignUpFormApp",
+                                   Toast.LENGTH_SHORT).show();
 
-    }
+                   } else {
+                           Toast.makeText(getApplicationContext(),
+                                   "passwords don't match",
+                                   Toast.LENGTH_SHORT).show();
+                       }
 
-
+                   }
+               }
         });
-
         }
         }
 
